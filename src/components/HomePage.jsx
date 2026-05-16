@@ -8,9 +8,17 @@ function HomePage() {
 				home.map((homeItem) => {
 					return (
 						<div key={homeItem.id}>
-							<h1>{homeItem.name}</h1>
-							<p>{homeItem.description}</p>
-							<p>Contact Me: {homeItem.phoneNumber}</p>
+							<h1 className="text-6xl text-pink-900 font-extrabold">
+								ᥫ᭡{homeItem.name}
+							</h1>
+							<br />
+							<p className="text-gray-900 text-xl font-bold">
+								{homeItem.description}
+							</p>
+              <br />
+							<p className="text-gray-700 text-md">
+								Contact Me: {homeItem.phoneNumber}
+							</p>
 						</div>
 					);
 				})}
