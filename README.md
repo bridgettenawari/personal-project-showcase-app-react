@@ -1,4 +1,4 @@
-This project is a Single Page Application Project Showcasing APP!
+This project is a Single Page Application Project showcasing various accessories found in our shop!
 It contains: 
             > A landing page describing what the site is about. (HomePage)
 

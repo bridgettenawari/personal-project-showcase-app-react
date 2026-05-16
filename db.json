@@ -1,26 +1,61 @@
 {
- "store_info": [
+  "home": [
     {
-      "id": 1,
-      "name": "Coffee R Us",
-      "description": "The go to store for coffee",
-      "phone_number": "555-5555"
+      "id": "1",
+      "name": "Linda's Accessories",
+      "description": "All Your Favourite Accessories In One Place!",
+      "phoneNumber": "0712345678"
     }
-   ],
-  "coffee": [
+  ],
+  "accessories": [
     {
-      "id": 1,
-      "description": "Medium Roast, nutty flavor",
-      "name": "Vanilla bean",
-      "origin": "Columbia",
-      "price": 10.00
+      "id": "1",
+      "description": "A red double knotted bow.",
+      "image": "https://bowtastic.co.uk/cdn/shop/files/IMG_6698_600x600_crop_center.jpg?v=1720016300",
+      "name": "Bowtastic Bow",
+      "origin": "Italy",
+      "price": "$3.50"
     },
     {
-      "id": 2,
-      "description": "Dark Roast, Rich flavor",
-      "name": "House Blend",
-      "origin": "Vietnam",
-      "price": 12.00
+      "id": "2",
+      "description": "A claw clip with flowers.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQThVhDgmQ0E_PwEKN-IjcgVgnOWi70fWKFg&s",
+      "name": "Flower Clip",
+      "origin": "China",
+      "price": "$6.30"
+    },
+    {
+      "id": "3",
+      "description": "A checked pink hat with a bow.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUzPxyUMl5Lul8L6aojkNc15TLAvCeYaFXkQ&s",
+      "name": "French hat",
+      "origin": "France",
+      "price": "$10.00"
+    },
+    {
+      "id": "4",
+      "description": "A bow keychain.",
+      "image": "https://m.media-amazon.com/images/I/61WgQkOiP5L._AC_UY1000_.jpg",
+      "name": "Pearly keychain",
+      "origin": "USA",
+      "price": "$4.99"
+    },
+    {
+      "id": "5",
+      "description": "A red double knotted bow.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOReqAQ6HRDNH1YiAAXN0pdM6_gSo0muFEdA&s",
+      "name": "Bowlicious earrings",
+      "origin": "Canada",
+      "price": "$10.00"
+    },
+    {
+      "id": "L0EyxtTJjLo",
+      "image": "https://m.media-amazon.com/images/I/71n28ccYqjL._AC_UY1000_.jpg",
+      "name": "Makeup Bag",
+      "description": "A pink makeup bag with bows",
+      "origin": "France",
+      "price": "12.00"
     }
-   ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
