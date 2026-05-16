@@ -14,6 +14,10 @@ function App() {
 	const [description, setDescription] = useState("");
 	const [origin, setOrigin] = useState("");
 	const [price, setPrice] = useState("");
+	const [error, setError] = useState(null);
+	const [loading, setLoading] = useState(true);
+
+	// DONT FORGET TO RETURN response.json()!!!
 
 	function fetchData() {
 		fetch("http://localhost:3000/accessories")
@@ -21,20 +25,34 @@ function App() {
 				if (!r.ok) throw new Error(`${r.status} Could not fetch data!`);
 				return r.json();
 			})
-			.then((result) => setAccessories(result))
-			.catch((error) => console.error(error.message));
+			.then((result) => {
+				setLoading(false);
+				setAccessories(result);
+			})
+			.catch((error) => {
+				setError(error.message);
+				console.error(error.message);
+			});
 	}
 	function handleAddAccessory(e) {
+		//prevent reloading on submission
 		e.preventDefault();
+
+		//if theres none of the following do not proceed
 		if (!image || !name || !price) return;
 		if (!description) return <p>No description</p>;
+
+		//create a variable for a new accessory and pass it as a parameter to the function that uses the spread operator to merge the new accesory and the existing accessories
 		const newAccessory = {
+			id: Date.now(),
 			image: image,
 			name: name.trim(),
 			description: description,
 			origin: origin,
 			price: price,
 		};
+
+		// call the add Accessory then reset the inputs
 		addAccessory(newAccessory);
 		setImage("");
 		setName("");
@@ -48,6 +66,8 @@ function App() {
 			headers: {
 				"Content-Type": "application/json",
 			},
+
+			// pass the newAccessory variable as a parameter
 			body: JSON.stringify(newAccessory),
 		})
 			.then((r) => {
@@ -56,15 +76,46 @@ function App() {
 				}
 				return r.json();
 			})
-			.then((data) => setAccessories([...accesories, newAccessory]))
-			.catch((error) => console.error(error.message));
+			.then((data) => {
+				setLoading(false);
+				setAccessories([...accesories, newAccessory]);
+			})
+			.catch((error) => {
+				setError(error.message);
+				console.error(error.message);
+			});
+	}
+	function deleteAccessory(id) {
+		fetch(`http://localhost:3000/accessories/${id}`, {
+			method: "DELETE",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			//body: JSON.stringify is only in post and patch
+			// data and r.json() is only used in post patch and get
+		})
+			.then((r) => {
+				if (!r.ok) {
+					throw new Error(`${r.status} Accessory not deleted`);
+				}
+			})
+			.then(() =>
+				//filter through accessories and return the accessories that don't have the ID of the deleted product
+				setAccessories(accesories.filter((accesory) => accesory.id !== id)),
+			)
+			.catch((error) => {
+				setError(error.message);
+				console.error(error.message);
+			});
 	}
 	useEffect(() => {
 		fetchData();
 	}, []);
 
 	return (
-		<div className="bg-pink-100 h-full || h-screen">
+		// h-screen only does partial for the shop and h-full only does partial for the addproducts page
+
+		<div className="bg-pink-100 min-h-screen ">
 			<BrowserRouter>
 				<nav className="bg-pink-200 px-10 py-7 flex  justify-evenly border-white border-2 mb-5">
 					<NavLink
@@ -100,7 +151,12 @@ function App() {
 				</nav>
 				<Routes>
 					<Route path="/" element={<HomePage />} />
-					<Route path="/shop" element={<ShopPage accessories={accesories} />} />
+					<Route
+						path="/shop"
+						element={
+							<ShopPage accessories={accesories} onDelete={deleteAccessory} loading={loading} error={error} />
+						}
+					/>
 					<Route
 						path="/add-product"
 						element={

@@ -1,4 +1,4 @@
-function Product({ accessory }) {
+function Product({ accessory, onDelete }) {
 	return (
 		<div className="">
 			<div className="bg-white rounded-lg p-5 shadow-md">
@@ -13,8 +13,16 @@ function Product({ accessory }) {
 					{accessory.origin}
 				</span>
 				<p className="font-bold mt-2">{accessory.price}</p>
-				<button className="bg-red-300 text-white p-3 rounded-lg mr-8">Delete</button>
-				<button className="bg-orange-200 text-white p-3 rounded-lg mr-10">Edit</button>
+				<button 
+				onClick={()=>onDelete(accessory.id)}
+				className="bg-red-300 text-white p-3 rounded-lg mr-8 cursor-pointer">
+					Delete
+				</button>
+				<button
+					className="bg-orange-200 text-white p-3 rounded-lg mr-10 cursor-pointer"
+				>
+					Edit
+				</button>
 			</div>
 		</div>
 	);

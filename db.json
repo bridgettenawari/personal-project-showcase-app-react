@@ -49,12 +49,12 @@
       "price": "$10.00"
     },
     {
+      "id": "L0EyxtTJjLo",
       "image": "https://m.media-amazon.com/images/I/71n28ccYqjL._AC_UY1000_.jpg",
       "name": "Makeup Bag",
-      "description": "A pink makeup bag with bows.",
-      "origin": "Italy",
-      "price": "12.00",
-      "id": "T0TTHJ88ZbM"
+      "description": "A pink makeup bag with bows",
+      "origin": "France",
+      "price": "12.00"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
