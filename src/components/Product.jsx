@@ -15,6 +15,7 @@ function Product({ accessory, onDelete, onEdit }) {
 	}
 	const [edit, setEdit] = useState(false); //Shows a diff form for editing an accessory
 	//Set a diff state for each edited item
+	//Set the initial value as the value of the accessory e.g. accessory.name
 	const [editedImage, setEditedImage] = useState(accessory.image);
 	const [editedName, setEditedName] = useState(accessory.name);
 	const [editedDescription, setEditedDescription] = useState(
@@ -26,6 +27,7 @@ function Product({ accessory, onDelete, onEdit }) {
 	return (
 		<div className="">
 			<div className="bg-white rounded-lg p-5 shadow-md">
+				{/* If editing is true show an input bar and set the value to the edited version and set onChange to the setter function of the edited version */}
 				{edit ? (
 					<input
 						type="text"
@@ -40,8 +42,6 @@ function Product({ accessory, onDelete, onEdit }) {
 						alt={accessory.name}
 					/>
 				)}
-
-				{/* If editing is true show an input bar and set the value to the edited version and set onChange to the setter function of the edited version */}
 				{edit ? (
 					<input
 						type="text"

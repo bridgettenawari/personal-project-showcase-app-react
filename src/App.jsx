@@ -32,12 +32,14 @@ function App() {
 				console.error(error.message);
 			});
 	}
+	// takes the already posted data in the API and sets it into a variable called newAccessory which then calls the function with the data and sets the new accessory by passing it into the function hence displaying it on the page
 	function handleAddAccessory(e) {
 		//prevent reloading on submission
 		e.preventDefault();
 
 		//if theres none of the following do not proceed
 		if (!image || !name || !price) return;
+		
 		if (!description) return <p>No description</p>;
 
 		//create a variable for a new accessory and pass it as a parameter to the function that uses the spread operator to merge the new accesory and the existing accessories
@@ -58,6 +60,7 @@ function App() {
 		setOrigin("");
 		setPrice("");
 	}
+	// handles sending data to the API and merging it with the previous existing data in the array of objects but doesnt yet show it on the page
 	function addAccessory(newAccessory) {
 		fetch("http://localhost:3000/accessories", {
 			method: "POST",
