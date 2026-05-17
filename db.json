@@ -21,7 +21,7 @@
       "description": "A claw clip with flowers.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQThVhDgmQ0E_PwEKN-IjcgVgnOWi70fWKFg&s",
       "name": "Flower Clip",
-      "origin": "China",
+      "origin": "Canada",
       "price": "$6.30"
     },
     {
@@ -63,14 +63,6 @@
       "description": "A pearl necklace with a pearl pendant.",
       "origin": "China",
       "price": "$14.50"
-    },
-    {
-      "id": "4p4IRgRKo14",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWj6cIyyYZcQLQQYnVhjO5RB2AJW19eA7-5Q&s",
-      "name": "Bow ring",
-      "description": "A silver ring with a bow as the ring gem.",
-      "origin": "Italy",
-      "price": "$9.50"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

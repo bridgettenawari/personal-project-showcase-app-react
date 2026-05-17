@@ -18,7 +18,9 @@ function App() {
 	// DONT FORGET TO RETURN response.json()!!!
 
 	function fetchData() {
-		fetch("http://localhost:3000/accessories")
+		fetch(
+			"https://personal-project-showcase-app-react.onrender.com/accessories",
+		)
 			.then((r) => {
 				if (!r.ok) throw new Error(`${r.status} Could not fetch data!`);
 				return r.json();
@@ -62,15 +64,18 @@ function App() {
 	}
 	// handles sending data to the API and merging it with the previous existing data in the array of objects but doesnt yet show it on the page
 	function addAccessory(newAccessory) {
-		fetch("http://localhost:3000/accessories", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
+		fetch(
+			"https://personal-project-showcase-app-react.onrender.com/accessories",
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
 
-			// pass the newAccessory variable as a parameter
-			body: JSON.stringify(newAccessory),
-		})
+				// pass the newAccessory variable as a parameter
+				body: JSON.stringify(newAccessory),
+			},
+		)
 			.then((r) => {
 				if (!r.ok) {
 					throw new Error(`${r.status} Accessory could not be posted!`);
@@ -87,14 +92,17 @@ function App() {
 			});
 	}
 	function deleteAccessory(id) {
-		fetch(`http://localhost:3000/accessories/${id}`, {
-			method: "DELETE",
-			headers: {
-				"Content-Type": "application/json",
+		fetch(
+			`https://personal-project-showcase-app-react.onrender.com/accessories/${id}`,
+			{
+				method: "DELETE",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				//body: JSON.stringify is only in post and patch
+				// data and r.json() is only used in post patch and get
 			},
-			//body: JSON.stringify is only in post and patch
-			// data and r.json() is only used in post patch and get
-		})
+		)
 			.then((r) => {
 				if (!r.ok) {
 					throw new Error(`${r.status} Accessory not deleted`);
@@ -110,13 +118,16 @@ function App() {
 			});
 	}
 	function updateAccessory(id, updatedAccessory) {
-		fetch(`http://localhost:3000/accessories/${id}`, {
-			method: "PATCH",
-			headers: {
-				"Content-Type": "application/json",
+		fetch(
+			`https://personal-project-showcase-app-react.onrender.com/accessories/${id}`,
+			{
+				method: "PATCH",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(updatedAccessory), //Pass in the updated accessory which will then be sent to the API
 			},
-			body: JSON.stringify(updatedAccessory), //Pass in the updated accessory which will then be sent to the API
-		})
+		)
 			.then((r) => {
 				if (!r.ok) {
 					throw new Error(`${r.status} Accessory could not be updated`);
