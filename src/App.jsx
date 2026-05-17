@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { Routes, Route, BrowserRouter, Link } from "react-router";
 import HomePage from "./components/HomePage";
-import Header from "./components/Header";
 import ShopPage from "./components/ShopPage";
 import AddProductPage from "./components/AddProductPage";
 import { NavLink } from "react-router";
@@ -16,7 +15,6 @@ function App() {
 	const [price, setPrice] = useState("");
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(true);
-
 	// DONT FORGET TO RETURN response.json()!!!
 
 	function fetchData() {
@@ -125,8 +123,8 @@ function App() {
 			.then((updatedAccessory) => {
 				setLoading(false);
         //loop through each accessory and if the id of the accessory is the same id as the selected accessory, show the updatedAccessory on the page otherwise just show the normal accessory
-				setAccessories(accessories.map((accesory) => {
-          accesory.id === id ? updatedAccessory : accesory
+				setAccessories(accessories.map((accessory) => {
+          accessory.id === id ? updatedAccessory : accessory
         }));
 			})
 			.catch((error) => {
@@ -183,6 +181,7 @@ function App() {
 						element={
 							<ShopPage
 								accessories={accesories}
+								setAccessories={setAccessories}
 								onEdit={updateAccessory}
 								onDelete={deleteAccessory}
 								loading={loading}
