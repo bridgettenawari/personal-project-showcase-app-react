@@ -21,7 +21,7 @@ function ShopPage({ accessories, onDelete, loading, error, onEdit }) {
 				setSearchedAccessories={setSearchedAccessories}
 			/>
 			{loading ? "Loading..." : ""}
-			{error ? <p>error.message</p> : ""}
+			{error ? <p>{error.message}</p> : ""}
 			{accessories &&
 				filteredAccessories.map((accessory) => (
 					<Product
