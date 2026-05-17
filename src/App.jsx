@@ -108,6 +108,32 @@ function App() {
 				console.error(error.message);
 			});
 	}
+	function updateAccessory(id, updatedAccessory) {
+		fetch(`http://localhost:3000/accessories/${id}`, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(updatedAccessory), //Pass in the updated accessory which will then be sent to the API
+		})
+			.then((r) => {
+				if (!r.ok) {
+					throw new Error(`${r.status} Accessory could not be updated`);
+				}
+				return r.json();
+			})
+			.then((updatedAccessory) => {
+				setLoading(false);
+        //loop through each accessory and if the id of the accessory is the same id as the selected accessory, show the updatedAccessory on the page otherwise just show the normal accessory
+				setAccessories(accessories.map((accesory) => {
+          accesory.id === id ? updatedAccessory : accesory
+        }));
+			})
+			.catch((error) => {
+				setError(error.message);
+				console.error(error.message);
+			});
+	}
 	useEffect(() => {
 		fetchData();
 	}, []);
@@ -120,6 +146,7 @@ function App() {
 				<nav className="bg-pink-200 px-10 py-7 flex  justify-evenly border-white border-2 mb-5">
 					<NavLink
 						to="/"
+            //Pass in the isActive as a js parameter to edit when the link is clicked on
 						className={({ isActive }) =>
 							isActive
 								? "text-white text-decoration: underline text-xl "
@@ -154,7 +181,13 @@ function App() {
 					<Route
 						path="/shop"
 						element={
-							<ShopPage accessories={accesories} onDelete={deleteAccessory} loading={loading} error={error} />
+							<ShopPage
+								accessories={accesories}
+								onEdit={updateAccessory}
+								onDelete={deleteAccessory}
+								loading={loading}
+								error={error}
+							/>
 						}
 					/>
 					<Route
