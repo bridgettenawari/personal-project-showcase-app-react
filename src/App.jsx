@@ -138,8 +138,8 @@ function App() {
 				setLoading(false);
 				//loop through each accessory and if the id of the accessory is the same id as the selected accessory, show the updatedAccessory on the page otherwise just show the normal accessory
 				setAccessories(
-					accessories.map((accessory) => {
-						accessory.id === id ? updatedAccessory : accessory;
+					accesories.map((accessory) => {
+						return accessory.id === id ? updatedAccessory : accessory;
 					}),
 				);
 			})
