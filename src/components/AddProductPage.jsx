@@ -12,7 +12,8 @@ function AddProductPage({
 	price,
 	setPrice,
 }) {
-	const accessoryId = useId();
+	const accessoryId = useId(); //Give each input and its label an id for accessibility
+	// set the value as the state value and put the onSubmit on the form not the button
 	return (
 		<div className="bg-white max-w-2xl rounded-2xl overflow-hidden shadow-xl p-4 mx-auto">
 			<form onSubmit={handleAddAccessory}>
@@ -77,6 +78,7 @@ function AddProductPage({
 				>
 					Origin:
 				</label>
+				{/* always put the js value in the select part when dealing with options so that what you pick will be set as the select value otherwise it wont allow you to change value and will stick with the first one */}
 				<select
 					value={origin}
 					onChange={(e) => setOrigin(e.target.value)}

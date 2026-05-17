@@ -54,7 +54,15 @@
       "name": "Makeup Bag",
       "description": "A pink makeup bag with bows",
       "origin": "France",
-      "price": "12.00"
+      "price": "$12.00"
+    },
+    {
+      "id": "F2ciGxdjft8",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFhiCFW3mEvdJFMuSKrLzGxNLLhltmNHFE3A&s",
+      "name": "Pearl Heart",
+      "description": "A pearl necklace with a pearl pendant.",
+      "origin": "Canada",
+      "price": "$14.50"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
