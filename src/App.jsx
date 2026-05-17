@@ -4,7 +4,7 @@ import { Routes, Route, BrowserRouter, Link } from "react-router";
 import HomePage from "./components/HomePage";
 import ShopPage from "./components/ShopPage";
 import AddProductPage from "./components/AddProductPage";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 
 function App() {
 	const [accessories, setAccessories] = useState([]);
