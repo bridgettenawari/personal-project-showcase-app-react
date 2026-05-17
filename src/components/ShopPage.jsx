@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Product from "./Product";
-import SearchBar from "./SearchBar";
+import SearchBar from "./SearchBar.jsx";
 function ShopPage({ accessories, onDelete, loading, error, onEdit }) {
 	const [searchedAccessories, setSearchedAccessories] = useState("");
 	const filteredAccessories = accessories.filter((accessory) => {
