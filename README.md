@@ -1,7 +1,9 @@
 This project is a Single Page Application Project showcasing various accessories found in our shop!
 
 SCREENSHOTS OF THE APP: Are in the public file
-
+![Homepage Screenshot](https://github.com/bridgettenawari/personal-project-showcase-app-react/blob/main/public/Screenshot%20from%202026-05-17%2017-11-32.png)
+![Shoppage Screenshot](https://github.com/bridgettenawari/personal-project-showcase-app-react/blob/main/public/Screenshot%20from%202026-05-17%2017-05-14.png)
+![AddProductpage Screenshot](https://github.com/bridgettenawari/personal-project-showcase-app-react/blob/main/public/Screenshot%20from%202026-05-17%2017-11-41.png)
                                           **PROJECT NEEDS**
 It contains: 
             > A landing page describing what the site is about. (HomePage)
