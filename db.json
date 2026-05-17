@@ -61,8 +61,16 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFhiCFW3mEvdJFMuSKrLzGxNLLhltmNHFE3A&s",
       "name": "Pearl Heart",
       "description": "A pearl necklace with a pearl pendant.",
-      "origin": "Canada",
+      "origin": "China",
       "price": "$14.50"
+    },
+    {
+      "id": "4p4IRgRKo14",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWj6cIyyYZcQLQQYnVhjO5RB2AJW19eA7-5Q&s",
+      "name": "Bow ring",
+      "description": "A silver ring with a bow as the ring gem.",
+      "origin": "Italy",
+      "price": "$9.50"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -90,7 +90,10 @@ function AddProductPage({
 					<option value="France">France</option>
 					<option value="China">China</option>
 				</select>
-				<button className=" bg-pink-300 text-white text-sm p-3 ml-10 rounded-3xl mt-5 h-auto">
+				<button
+					type="submit"
+					className=" bg-pink-300 text-white text-sm p-3 ml-10 rounded-3xl mt-5 h-auto cursor-pointer hover:bg-pink-400"
+				>
 					Add Project
 				</button>
 			</form>
