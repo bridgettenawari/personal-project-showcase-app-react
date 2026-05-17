@@ -1,4 +1,7 @@
 This project is a Single Page Application Project showcasing various accessories found in our shop!
+
+SCREENSHOTS OF THE APP: Are in the public file
+
                                           **PROJECT NEEDS**
 It contains: 
             > A landing page describing what the site is about. (HomePage)
