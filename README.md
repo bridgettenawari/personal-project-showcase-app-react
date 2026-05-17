@@ -12,4 +12,12 @@ It contains:
 
 It was made using: React, JavaScript, HTML and TailwindCSS
 
+Possible bugs: 
+              > I'm not really sure about the PATCH thing for updating and if it works properly all the time
+
+              > Misspelling props
+
+              > Forgetting to return things
+
+              >
 Author: Bridgette Nawari

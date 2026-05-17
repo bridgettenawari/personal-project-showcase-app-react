@@ -7,7 +7,7 @@ import AddProductPage from "./components/AddProductPage";
 import { NavLink } from "react-router";
 
 function App() {
-	const [accesories, setAccessories] = useState([]);
+	const [accessories, setAccessories] = useState([]);
 	const [image, setImage] = useState("");
 	const [name, setName] = useState("");
 	const [description, setDescription] = useState("");
@@ -39,7 +39,7 @@ function App() {
 
 		//if theres none of the following do not proceed
 		if (!image || !name || !price) return;
-		
+
 		if (!description) return <p>No description</p>;
 
 		//create a variable for a new accessory and pass it as a parameter to the function that uses the spread operator to merge the new accesory and the existing accessories
@@ -79,7 +79,7 @@ function App() {
 			})
 			.then((data) => {
 				setLoading(false);
-				setAccessories([...accesories, newAccessory]);
+				setAccessories([...accessories, newAccessory]);
 			})
 			.catch((error) => {
 				setError(error.message);
@@ -102,7 +102,7 @@ function App() {
 			})
 			.then(() =>
 				//filter through accessories and return the accessories that don't have the ID of the deleted product
-				setAccessories(accesories.filter((accesory) => accesory.id !== id)),
+				setAccessories(accessories.filter((accesory) => accesory.id !== id)),
 			)
 			.catch((error) => {
 				setError(error.message);
@@ -125,10 +125,12 @@ function App() {
 			})
 			.then((updatedAccessory) => {
 				setLoading(false);
-        //loop through each accessory and if the id of the accessory is the same id as the selected accessory, show the updatedAccessory on the page otherwise just show the normal accessory
-				setAccessories(accessories.map((accessory) => {
-          accessory.id === id ? updatedAccessory : accessory
-        }));
+				//loop through each accessory and if the id of the accessory is the same id as the selected accessory, show the updatedAccessory on the page otherwise just show the normal accessory
+				setAccessories(
+					accessories.map((accessory) => {
+						accessory.id === id ? updatedAccessory : accessory;
+					}),
+				);
 			})
 			.catch((error) => {
 				setError(error.message);
@@ -147,7 +149,7 @@ function App() {
 				<nav className="bg-pink-200 px-10 py-7 flex  justify-evenly border-white border-2 mb-5">
 					<NavLink
 						to="/"
-            //Pass in the isActive as a js parameter to edit when the link is clicked on
+						//Pass in the isActive as a js parameter to edit when the link is clicked on
 						className={({ isActive }) =>
 							isActive
 								? "text-white text-decoration: underline text-xl "
@@ -183,7 +185,7 @@ function App() {
 						path="/shop"
 						element={
 							<ShopPage
-								accessories={accesories}
+								accessories={accessories}
 								setAccessories={setAccessories}
 								onEdit={updateAccessory}
 								onDelete={deleteAccessory}
