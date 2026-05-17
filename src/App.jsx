@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import { Routes, Route, BrowserRouter, Link } from "react-router";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import ShopPage from "./components/ShopPage";
 import AddProductPage from "./components/AddProductPage";
@@ -138,7 +138,7 @@ function App() {
 				setLoading(false);
 				//loop through each accessory and if the id of the accessory is the same id as the selected accessory, show the updatedAccessory on the page otherwise just show the normal accessory
 				setAccessories(
-					accesories.map((accessory) => {
+					accessories.map((accessory) => {
 						return accessory.id === id ? updatedAccessory : accessory;
 					}),
 				);
