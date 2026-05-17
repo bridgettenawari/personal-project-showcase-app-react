@@ -5,13 +5,11 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"start": "react-scripts start",
-		"build": "react-scripts build",
+		"build": "vite build",
 		"lint": "eslint .",
 		"preview": "vite preview",
-		"eject": "react-scripts eject",
-		"test": "react-scripts test --watchAll --coverage",
-		"server": ""
+		"test": "vitest",
+		"test:coverage": "vitest run --coverage"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.3.0",
@@ -25,6 +23,8 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@testing-library/jest-dom": "^6.9.1",
+		"@testing-library/react": "^16.3.2",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react": "^6.0.1",
@@ -32,7 +32,9 @@
 		"eslint-plugin-react-hooks": "^7.1.1",
 		"eslint-plugin-react-refresh": "^0.5.2",
 		"globals": "^17.6.0",
-		"vite": "^8.0.12"
+		"jsdom": "^29.1.1",
+		"vite": "^8.0.12",
+		"vitest": "^4.1.6"
 	},
 	"jest": {
 		"coverageThreshold": {
